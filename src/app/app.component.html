@@ -1,0 +1,36 @@
+<input class="btn btn-success" type="button" value="Get InstaFeed" (click)="Redirect()" />
+
+<div >
+<h2 style="text-align:center"> Hey {{ProfileResponse.full_name}} </h2>
+
+<div class="card">
+  <img src="{{ProfileResponse.profile_picture}}" alt="John" style="width:100%">
+ 
+  <p class="title">{{ProfileResponse.bio}}</p>
+ 
+  <div style="margin: 24px 0;">
+    Wow you have  {{ProfileResponse.counts.followed_by}} followers! :)
+   
+  </div>
+  <p><a class="button" href="{{ProfileResponse.website}}">Contact</a></p>
+</div>
+
+
+<h4 style="text-align:center"> Feed  </h4>
+
+<div class="card">
+  <img src="{{MediaResponse.images.thumbnail.url}}" alt="Ram" style="width:100%">
+  <p class="title">{{MediaResponse.location.name}}</p>
+  <p class="title">{{MediaResponse.caption.text}}</p>
+  <p>{{MediaResponse.caption.text.username}}</p>
+  <img src="{{MediaResponse.user.profile_picture}}" alt="noimage">
+  <div style="margin: 24px 0;">
+
+    <li>likes: {{MediaResponse.likes.count}}</li>
+
+   
+  </div>
+  <p><a class="button" href="{{ProfileResponse.website}}">Contact</a></p>
+</div>
+
+</div>
