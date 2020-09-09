@@ -28,17 +28,17 @@ export class AppComponent {
  
   ProfileResponse: Profile;
   MediaResponse:any;
- constructor(private http: HttpClient)
+  
+   constructor(private http: HttpClient)
    {
 
-    // check if the token exits and make the call to api
+     // check if the token exits and make the call to api
         this.CheckiftheAccesTokenExists()
    
-   }
+    }
   
    CheckiftheAccesTokenExists()
    {
-
     try
     {
       let AcessToken = window.location.href.split('#')[1].split('=')[1];
@@ -47,7 +47,6 @@ export class AppComponent {
       .subscribe(
         (data) => { 
         this.ProfileResponse = data["data"];
-          console.log(JSON.stringify(data));
          }, // success path
         error =>  error // error path
       );
@@ -59,8 +58,6 @@ export class AppComponent {
           .subscribe(
             (data) => { 
             this.MediaResponse = data["data"][0];
-          
-              console.log(JSON.stringify(data));
              }, // success path
             error =>  error // error path
           );
@@ -79,7 +76,6 @@ export class AppComponent {
   }
 
   getInstaReCentMedia(AcessToken) {
-  //  alert("https://api.instagram.com/v1/users/self/media/recent/?access_token="+AcessToken+"&count=1");
     return this.http.get<Profile>("https://api.instagram.com/v1/users/self/media/recent/?access_token="+AcessToken+"&count=1");
   }
 
