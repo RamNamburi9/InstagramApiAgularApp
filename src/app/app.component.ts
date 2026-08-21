@@ -81,6 +81,8 @@ export class AppComponent {
 
   Redirect()
   {
-    window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=YOUR_INSTAGRAM_CLIENT_ID&redirect_uri=http://localhost:4200/&response_type=token";
+    const clientId = "YOUR_INSTAGRAM_CLIENT_ID";
+    const redirectUri = encodeURIComponent("http://localhost:4200/");
+    window.location.href = `https://api.instagram.com/oauth/authorize/?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token`;
   }
 }
